@@ -1,33 +1,60 @@
 # react-native-offline-queue
 
-A lightweight React Native library to queue and retry failed HTTP requests when offline. Automatically syncs requests when the device reconnects to the internet.
+A queue system for handling HTTP requests in React Native when the device is offline.
 
-## Installation
+## Features ✨
+
+- **Stores offline requests** when there is no connection.
+- **Automatically retries** requests when the connection is restored.
+- **Uses AsyncStorage** for data persistence.
+- **Compatible with React Native and Expo**.
+
+## Installation 🚀
+
+Install the library with:
 
 ```sh
 npm install react-native-offline-queue
+# or
+yarn add react-native-offline-queue
 ```
 
-## Usage
+Also, make sure you have the following dependencies installed:
 
-
-```js
-import { multiply } from 'react-native-offline-queue';
-
-// ...
-
-const result = await multiply(3, 7);
+```sh
+yarn add @react-native-async-storage/async-storage @react-native-community/netinfo cross-fetch
 ```
 
+## Usage 📖
 
-## Contributing
+Import and use `fetchWithQueue` in your code:
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+```ts
+import { fetchWithQueue } from "react-native-offline-queue";
 
-## License
+const sendData = async () => {
+  await fetchWithQueue("https://api.example.com/data", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ key: "value" })
+  });
+};
+```
+
+## How It Works ⚙️
+
+1. When the device is **online**, `fetchWithQueue` sends the request normally.
+2. If the device is **offline**, the request is stored in `AsyncStorage`.
+3. When the connection is restored, the queued requests are automatically processed.
+
+## Connection Events 📡
+
+The system monitors connection changes using `NetInfo`, retrying stored requests when the device is back online.
+
+## License 📜
 
 MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+💡 Feel free to contribute and improve this library! 🚀

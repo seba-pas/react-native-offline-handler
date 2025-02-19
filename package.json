@@ -92,7 +92,8 @@
     "react-native": "*"
   },
   "workspaces": [
-    "example"
+    "example",
+    ".github/actions/setup"
   ],
   "packageManager": "yarn@3.6.1",
   "jest": {

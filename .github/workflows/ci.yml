@@ -93,9 +93,9 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Cache yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: **/node_modules
+          path: '**/node_modules'
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-

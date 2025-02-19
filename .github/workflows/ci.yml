@@ -20,6 +20,17 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
       - name: Lint files
         run: yarn lint
 
@@ -35,6 +46,17 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
       - name: Run unit tests
         run: yarn test --maxWorkers=2 --coverage
 
@@ -47,6 +69,17 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
       - name: Build package
         run: yarn prepare
 
@@ -58,6 +91,17 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
+
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        with:
+          path: **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --immutable
 
       - name: Build example for Web
         run: |

@@ -1,6 +1,6 @@
 {
   "name": "react-native-offline-handler",
-  "version": "1.3.20",
+  "version": "1.3.21",
   "description": "A lightweight React Native library to queue and retry failed HTTP requests when offline. Automatically syncs requests when the device reconnects to the internet.",
   "source": "./src/index.tsx",
   "main": "lib/commonjs/index.js",

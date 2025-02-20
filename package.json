@@ -5,12 +5,11 @@
   "source": "./src/index.tsx",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/commonjs/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/module/index.js",
-      "require": "./lib/commonjs/index.js",
-      "types": "./lib/typescript/src/index.d.ts"
+      "require": "./lib/commonjs/index.js"
     }
   },
   "files": [

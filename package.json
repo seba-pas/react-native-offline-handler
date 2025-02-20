@@ -3,8 +3,8 @@
   "version": "1.2.18",
   "description": "A lightweight React Native library to queue and retry failed HTTP requests when offline. Automatically syncs requests when the device reconnects to the internet.",
   "source": "./src/index.tsx",
-  "main": "lib\\commonjs\\index.js",
-  "module": "lib\\module\\index.js",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
   "exports": {
     ".": {
       "import": {
@@ -192,8 +192,8 @@
     "@react-native-community/netinfo": "^11.4.1",
     "cross-fetch": "^4.1.0"
   },
-  "react-native": "src\\index.tsx",
-  "types": "lib\\typescript\\src\\index.d.ts",
+  "react-native": "src/index.tsx",
+  "types": "lib/typescript/src/index.d.ts",
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",

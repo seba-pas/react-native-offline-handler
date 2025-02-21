@@ -52,6 +52,7 @@ NetInfo.addEventListener((state) => {
   }
 });
 
+// Export the multiply function
 export const multiply = (a: number, b: number): number => {
   return a * b;
 };

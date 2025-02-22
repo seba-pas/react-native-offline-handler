@@ -1,4 +1,4 @@
-# react-native-offline-queue
+# react-native-offline-handler
 
 A queue system for handling HTTP requests in React Native when the device is offline.
 
@@ -14,9 +14,9 @@ A queue system for handling HTTP requests in React Native when the device is off
 Install the library with:
 
 ```sh
-npm install react-native-offline-queue
+npm install react-native-offline-handler
 # or
-yarn add react-native-offline-queue
+yarn add react-native-offline-handler
 ```
 
 Also, make sure you have the following dependencies installed:
@@ -30,7 +30,7 @@ yarn add @react-native-async-storage/async-storage @react-native-community/netin
 Import and use `fetchWithQueue` in your code:
 
 ```ts
-import { fetchWithQueue } from "react-native-offline-queue";
+import { fetchWithQueue } from "react-native-offline-handler";
 
 const sendData = async () => {
   await fetchWithQueue("https://api.example.com/data", {
